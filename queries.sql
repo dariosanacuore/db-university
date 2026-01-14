@@ -40,3 +40,13 @@ FROM departments
 SELECT *
 FROM teachers
 WHERE phone IS NULL;
+
+
+
+--1. Contare quanti iscritti ci sono stati ogni anno
+SELECT YEAR(enrolment_date) AS year, COUNT(*) AS total_students
+FROM students
+GROUP BY YEAR(enrolment_date)
+ORDER BY year;
+
+--
